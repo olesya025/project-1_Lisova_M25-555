@@ -24,5 +24,6 @@ poetry run project
 - help - помощь
 - quit - выход
 
-## Демонстрация
-[![asciicast](https://asciinema.org/a/qTZxfQJ0cxM2NH7HJzS0mkgo3.svg)](https://asciinema.org/a/qTZxfQJ0cxM2NH7HJzS0mkgo3)
+##  Демонстрация игрового процесса
+
+[![asciicast](https://asciinema.org/a/T0G3n7e1TXv3eXeuiw2HJcqmy.svg)](https://asciinema.org/a/T0G3n7e1TXv3eXeuiw2HJcqmy)
