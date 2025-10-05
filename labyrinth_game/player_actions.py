@@ -25,29 +25,15 @@ def move_player(direction, game_state):
     if direction in room_data['exits']:
         new_room = room_data['exits'][direction]
         
-        # Используем временные переменные для коротких условий
-        is_treasure = new_room == 'treasure_room'
-        has_key = 'rusty_key' in game_state['player_inventory']
+        # Упрощенная проверка для treasure_room
+        if new_room == 'treasure_room':
+            print("Вы находите путь в сокровищницу!")
         
-        if is_treasure and not has_key:
-            print("Дверь заперта. Нужен ключ, чтобы пройти дальше.")
-            return False
-        elif is_treasure and has_key:
-            # Строка 36:
-            msg = "Вы используете найденный ключ, чтобы открыть " \
-              "путь в комнату сокровищ."
-            print(msg)
-            game_state['current_room'] = new_room
-            game_state['steps_taken'] += 1
-            random_event(game_state)
-            print(f"Вы переместились {direction}.")
-            return True
-        else:
-            game_state['current_room'] = new_room
-            game_state['steps_taken'] += 1
-            random_event(game_state)
-            print(f"Вы переместились {direction}.")
-            return True
+        game_state['current_room'] = new_room
+        game_state['steps_taken'] += 1
+        random_event(game_state)
+        print(f"Вы переместились {direction}.")
+        return True
     else:
         print(f"Нельзя пойти {direction}.")
         return False
@@ -90,7 +76,7 @@ def use_item(game_state, item_name):
         case "sword":
             print("Вы размахиваете мечом. Чувствуете себя увереннее!")
             return True
-        case "bronze box":
+        case "bronze_box":
             print("Вы открываете бронзовую шкатулку...")
             if "rusty_key" not in inventory:
                 inventory.append("rusty_key")
@@ -126,6 +112,9 @@ def solve_puzzle(game_state):
     question, correct_answer = room_data['puzzle']
     print(f"Загадка: {question}")
     user_answer = input("Ваш ответ: ").strip().lower()
+    
+    # ДОБАВЛЯЕМ ОБРАБОТКУ КОДИРОВКИ
+    user_answer = user_answer.encode('utf-8', errors='ignore').decode('utf-8')
 
     def check_number_after_nine(answer):
         number_words = {
