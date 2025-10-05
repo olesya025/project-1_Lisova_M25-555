@@ -30,7 +30,7 @@ ROOMS = {
         'description': 'Пыльная библиотека. На полках старые свитки. '
                        'Где-то здесь может быть ключ от сокровищницы.',
         'exits': {'east': 'hall', 'north': 'armory'},
-        'items': ['ancient book'],
+        'items': [],
         'puzzle': ('В одном свитке загадка: "Что растет, когда его съедают?" '
                    '(ответ одно слово)', 'аппетит'),
         'has_trap': False
@@ -39,7 +39,7 @@ ROOMS = {
         'description': 'Старая оружейная комната. На стене висит меч, '
                        'рядом --- небольшая бронзовая шкатулка.',
         'exits': {'south': 'library'},
-        'items': ['sword', 'bronze box'],
+        'items': ['sword', 'bronze_box'],
         'puzzle': None,
         'has_trap': True
     },
