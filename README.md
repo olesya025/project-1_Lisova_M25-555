@@ -25,4 +25,4 @@ poetry run project
 - quit - выход
 
 ## Демонстрация
-[Здесь будет asciinema запись игрового процесса]
+[![asciicast](https://asciinema.org/a/qTZxfQJ0cxM2NH7HJzS0mkgo3.svg)](https://asciinema.org/a/qTZxfQJ0cxM2NH7HJzS0mkgo3)
