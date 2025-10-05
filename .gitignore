@@ -2,3 +2,5 @@
 dist/
 labyrinth_demo.cast
 labyrinth_demo_final.cast
+__pycache__/
+*.pyc
