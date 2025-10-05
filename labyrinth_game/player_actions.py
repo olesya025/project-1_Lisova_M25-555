@@ -10,10 +10,12 @@ def show_inventory(game_state):
     else:
         print("Ваш инвентарь пуст.")
 
-def get_input(prompt="> "):
+def get_input(prompt=""):
     """Получает ввод от пользователя с обработкой ошибок."""
     try:
-        return input(prompt).strip().lower()
+        user_input = input(prompt).strip().lower()
+        user_input = user_input.encode('utf-8', errors='ignore').decode('utf-8')
+        return user_input
     except (KeyboardInterrupt, EOFError):
         print("\nВыход из игры.")
         return "quit"
